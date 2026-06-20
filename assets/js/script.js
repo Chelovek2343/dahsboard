@@ -54,3 +54,48 @@ filterButtons.forEach(btn => {
 
   });
 });
+
+// --- Курсы валют ---
+const currencies = [
+  { code: 'USD', flag: '🇺🇸', name: 'Доллар США' },
+  { code: 'EUR', flag: '🇪🇺', name: 'Евро' },
+  { code: 'RUB', flag: '🇷🇺', name: 'Рос. рубль' },
+  { code: 'KZT', flag: '🇰🇿', name: 'Казах. тенге' },
+];
+
+async function fetchRates() {
+  try {
+    const res = await fetch('https://api.exchangerate-api.com/v4/latest/KGS');
+    const data = await res.json();
+
+    const grid = document.getElementById('rates-grid');
+    const updated = document.getElementById('rates-updated');
+
+    // время обновления
+    const now = new Date();
+    const time = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    updated.textContent = `обновлено в ${time}`;
+
+    // рендерим карточки
+    grid.innerHTML = currencies.map(cur => {
+      // API даёт сколько единиц валюты за 1 KGS
+      // нам нужно обратное: сколько KGS за 1 единицу валюты
+      const rate = (1 / data.rates[cur.code]).toFixed(2);
+
+      return `
+        <div class="rate-card">
+          <span class="rate-flag">${cur.flag}</span>
+          <span class="rate-code">${cur.code}</span>
+          <span class="rate-value">${rate} <small style="font-size:13px;font-weight:400;color:var(--gray-500)">сом</small></span>
+          <span class="rate-label">${cur.name}</span>
+        </div>
+      `;
+    }).join('');
+
+  } catch (err) {
+    document.getElementById('rates-updated').textContent = 'не удалось загрузить';
+    console.error('Ошибка загрузки курсов:', err);
+  }
+}
+
+fetchRates();
