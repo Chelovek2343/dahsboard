@@ -118,7 +118,183 @@
                 </section>
 
                 <section class="bottom-grid">
-                    <!-- транзакции и обзор -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Последние транзакции</h2>
+                        </div>
+                        <ul class="tx-list">
+                            <li class="tx-item" data-category="shopping">
+                                <div class="tx-icon shopping">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                                        />
+                                        <line x1="3" y1="6" x2="21" y2="6" />
+                                        <path d="M16 10a4 4 0 0 1-8 0" />
+                                    </svg>
+                                </div>
+                                <div class="tx-info">
+                                    <span class="tx-name"
+                                        >Супермаркет Фрунзе</span
+                                    >
+                                    <span class="tx-date">19 июн 2026</span>
+                                </div>
+                                <span class="tx-amount negative"
+                                    >−1 240 сом</span
+                                >
+                            </li>
+                            <li class="tx-item" data-category="income">
+                                <div class="tx-icon income">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <rect
+                                            x="2"
+                                            y="7"
+                                            width="20"
+                                            height="14"
+                                            rx="2"
+                                        />
+                                        <path
+                                            d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="tx-info">
+                                    <span class="tx-name">Зарплата</span>
+                                    <span class="tx-date">18 июн 2026</span>
+                                </div>
+                                <span class="tx-amount positive"
+                                    >+32 000 сом</span
+                                >
+                            </li>
+                            <li class="tx-item" data-category="mobile">
+                                <div class="tx-icon mobile">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <rect
+                                            x="5"
+                                            y="2"
+                                            width="14"
+                                            height="20"
+                                            rx="2"
+                                        />
+                                        <line
+                                            x1="12"
+                                            y1="18"
+                                            x2="12"
+                                            y2="18.01"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="tx-info">
+                                    <span class="tx-name">Мегаком</span>
+                                    <span class="tx-date">17 июн 2026</span>
+                                </div>
+                                <span class="tx-amount negative">−300 сом</span>
+                            </li>
+                            <li class="tx-item" data-category="housing">
+                                <div class="tx-icon housing">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                        />
+                                        <polyline
+                                            points="9 22 9 12 15 12 15 22"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="tx-info">
+                                    <span class="tx-name">Аренда квартиры</span>
+                                    <span class="tx-date">15 июн 2026</span>
+                                </div>
+                                <span class="tx-amount negative"
+                                    >−12 000 сом</span
+                                >
+                            </li>
+                            <li class="tx-item" data-category="shopping">
+                                <div class="tx-icon shopping">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                                        />
+                                        <line x1="3" y1="6" x2="21" y2="6" />
+                                        <path d="M16 10a4 4 0 0 1-8 0" />
+                                    </svg>
+                                </div>
+                                <div class="tx-info">
+                                    <span class="tx-name">Книжный магазин</span>
+                                    <span class="tx-date">13 июн 2026</span>
+                                </div>
+                                <span class="tx-amount negative">−450 сом</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Быстрый обзор</h2>
+                        </div>
+                        <ul class="overview-list">
+                            <li class="overview-item">
+                                <span class="overview-label"
+                                    >Сберегательный</span
+                                >
+                                <span class="overview-value">41 200 сом</span>
+                            </li>
+                            <li class="overview-item">
+                                <span class="overview-label">Кредит</span>
+                                <span class="overview-value warning"
+                                    >23 000 сом</span
+                                >
+                            </li>
+                            <li class="overview-item">
+                                <span class="overview-label"
+                                    >Цель за месяц</span
+                                >
+                                <div class="overview-right">
+                                    <span class="overview-value">68%</span>
+                                    <span class="badge green">в норме</span>
+                                </div>
+                            </li>
+                            <li class="overview-item">
+                                <span class="overview-label">Статус карты</span>
+                                <span class="badge green">Активна</span>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
             </main>
         </div>

@@ -183,3 +183,134 @@ body {
 .metric-card.accent .metric-change {
   color: var(--green-50);
 }
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.tx-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.tx-item:last-child {
+  border-bottom: none;
+}
+
+.tx-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tx-icon.shopping { background: #EAF3DE; color: var(--green-600); }
+.tx-icon.income   { background: #EAF3DE; color: var(--green-600); }
+.tx-icon.mobile   { background: #F0F4FF; color: #3B5BDB; }
+.tx-icon.housing  { background: #FFF4E0; color: #C07800; }
+
+.tx-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.tx-name {
+  font-size: 14px;
+  color: var(--gray-900);
+}
+
+.tx-date {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.tx-amount {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tx-amount.positive { color: var(--green-600); }
+.tx-amount.negative { color: var(--gray-900); }
+
+.overview-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overview-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+.overview-label {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.overview-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.overview-value.warning {
+  color: #C07800;
+}
+
+.overview-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.badge.green {
+  background: var(--green-50);
+  color: var(--green-600);
+}
