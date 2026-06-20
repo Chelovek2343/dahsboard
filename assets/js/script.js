@@ -1,5 +1,28 @@
 // FinDash — main script
 
+// --- Бургер-меню ---
+const burger = document.getElementById('burger');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+function openMenu() {
+  sidebar.classList.add('open');
+  overlay.classList.add('active');
+}
+
+function closeMenu() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+}
+
+burger.addEventListener('click', openMenu);
+overlay.addEventListener('click', closeMenu);
+
+// закрываем меню при клике на пункт навигации
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', closeMenu);
+});
+
 // --- Фильтрация транзакций ---
 const filterButtons = document.querySelectorAll('.filter-btn');
 const txItems = document.querySelectorAll('.tx-item');

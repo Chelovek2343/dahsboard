@@ -360,48 +360,74 @@ body {
 
 /* --- Адаптивность --- */
 
-@media (max-width: 1024px) {
-  .bottom-grid {
-    grid-template-columns: 1fr;
-  }
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--gray-900);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.overlay.active {
+  display: block;
 }
 
 @media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
   .sidebar {
-    width: 100%;
-    min-height: auto;
-    position: static;
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem;
-    border-right: none;
-    border-bottom: 1px solid var(--gray-200);
-    overflow-x: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.08);
   }
 
-  .logo {
-    margin-bottom: 0;
-    margin-right: 1rem;
-    white-space: nowrap;
-  }
-
-  .nav {
-    flex-direction: row;
-    gap: 4px;
-  }
-
-  .nav-item {
-    white-space: nowrap;
-    padding: 8px 10px;
-    font-size: 13px;
+  .sidebar.open {
+    transform: translateX(0);
   }
 
   .main {
     margin-left: 0;
-    padding: 1.25rem;
+    padding: 1.25rem 1rem;
+    padding-top: 4rem;
   }
 
   .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .bottom-grid {
     grid-template-columns: 1fr;
   }
 
@@ -410,22 +436,18 @@ body {
     align-items: flex-start;
   }
 
-  .greeting {
-    font-size: 17px;
+  .metric-value {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .main {
-    padding: 1rem;
+  .metrics {
+    grid-template-columns: 1fr;
   }
 
-  .metric-value {
-    font-size: 20px;
-  }
-
-  .filters {
-    gap: 4px;
+  .greeting {
+    font-size: 16px;
   }
 
   .filter-btn {
