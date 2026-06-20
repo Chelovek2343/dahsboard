@@ -12,4 +12,4 @@ HTML, CSS, JavaScript (без библиотек)
 - Адаптивная верстка + бургер-меню
 
 ## Live
-[Открыть проект](https://Chelovek2343.github.io/findash)
+[Открыть проект](chelovek2343.github.io/dahsboard/)
