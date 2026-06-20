@@ -5,23 +5,31 @@ const burger = document.getElementById('burger');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
 
-function openMenu() {
-  sidebar.classList.add('open');
-  overlay.classList.add('active');
+if (burger && sidebar && overlay) {
+
+  function openMenu() {
+    sidebar.classList.add('open');
+    overlay.classList.add('active');
+    burger.classList.add('open');
+  }
+
+  function closeMenu() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+    burger.classList.remove('open');
+  }
+
+  burger.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', closeMenu);
+  });
+
 }
-
-function closeMenu() {
-  sidebar.classList.remove('open');
-  overlay.classList.remove('active');
-}
-
-burger.addEventListener('click', openMenu);
-overlay.addEventListener('click', closeMenu);
-
-// закрываем меню при клике на пункт навигации
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', closeMenu);
-});
 
 // --- Фильтрация транзакций ---
 const filterButtons = document.querySelectorAll('.filter-btn');

@@ -381,7 +381,20 @@ body {
   height: 2px;
   background: var(--gray-900);
   border-radius: 2px;
-  transition: all 0.2s;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .overlay {
