@@ -314,3 +314,46 @@ body {
   background: var(--green-50);
   color: var(--green-600);
 }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+
+.filter-btn:hover {
+  border-color: var(--green-400);
+  color: var(--green-600);
+}
+
+.filter-btn.active {
+  background: var(--green-400);
+  border-color: var(--green-400);
+  color: var(--white);
+  font-weight: 500;
+}
+
+.tx-item.hidden {
+  display: none;
+}
